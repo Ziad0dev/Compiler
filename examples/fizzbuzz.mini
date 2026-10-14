@@ -1,0 +1,18 @@
+fn fizzbuzz(i, n) {
+  if i > n {
+    nil()
+  } else {
+    let word = if i % 15 == 0 { "FizzBuzz" }
+      else if i % 3 == 0 { "Fizz" }
+      else if i % 5 == 0 { "Buzz" }
+      else { str(i) };
+    print(word);
+    fizzbuzz(i + 1, n)   // tail call: runs in constant stack space
+  }
+}
+
+fn nil() { }
+
+fn main() {
+  fizzbuzz(1, 15);
+}

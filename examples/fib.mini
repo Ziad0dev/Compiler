@@ -1,0 +1,9 @@
+// Naive recursion, compiled to native BEAM functions.
+fn fib(n) {
+  if n < 2 { n } else { fib(n - 1) + fib(n - 2) }
+}
+
+fn main() {
+  let n = 25;
+  print(concat("fib(", n, ") ="), fib(n));
+}
